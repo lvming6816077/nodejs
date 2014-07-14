@@ -1,0 +1,18 @@
+extends layout
+block append scripts
+    script(type='text/javascript', src='js/index/index.js')
+block content
+    h1= title
+    #formDiv
+        form.uk-form
+            <input type="text" class="username"/>
+            <input type="text" class="password"/>
+            <a type="submit" class="uk-button uk-button-primary">登录</a>
+        form.uk-form.register-form
+            label 用户名：
+            <input type="text" class="username"/>
+            label 密码：
+            <input type="text" class="password"/>
+            label 确认密码：
+            <input type="text" class="confirm-password"/>
+            <input id="regSubmit" type="button" class="uk-button uk-button-primary" value="注册"/>
