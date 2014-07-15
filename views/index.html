@@ -1,11 +1,13 @@
  <% layout('layout.html') %> <% script('js/index/index.js') -%>
-<div class="uk-form">
-<input type="text" class="username" />
-<input type="text" class="password" />
-<a type="submit" class="uk-button uk-button-primary">登录</a>
-<input type="text" class="username" />
-<input type="text" class="password" />
-<input type="text" class="confirm-password" />
-<input id="regSubmit" type="button" class="uk-button uk-button-primary"
-	value="注册" />
+<div class="uk-form login-form">
+    <label for="username">username:</label><input type="text" class="username" id="username"/><br>
+    <label for="password">password:</label><input type="text" class="password" id="password"/><br>
+    <a type="submit" class="uk-button uk-button-primary" id="login">登录</a><br>
+</div>
+<div class="uk-form register-form">
+    <label>username:</label><input type="text" class="username" id="username"/><br>
+    <label>password:</label><input type="password" class="password" id="password"/><br>
+    <label>confirm password:</label><input type="password" class="confirm-password" /><br>
+    <input id="regSubmit" type="button" class="uk-button uk-button-primary"
+    	value="注册" />
 </div>

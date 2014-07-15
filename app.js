@@ -22,6 +22,7 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   console.log(ejs);
   app.engine('html', ejs);
+  //change ejs to html template
   app.set('view engine', 'html');
   app.use(express.favicon());
   app.use(express.logger('dev'));
@@ -43,16 +44,17 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
+//db name is game-maker
 mongoose.connect('mongodb://localhost/game-maker');
 
 // Routes
 
 // index
-app.get('/login', siteRoute.login);
+app.post('/login', siteRoute.login);
 app.post('/register', siteRoute.register);
 app.get('/', function(req, res){
 	res.render('index', {
-        title: 'Employees Test'
+        title: 'Demo'
     });
 });
 
