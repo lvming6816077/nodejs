@@ -4,8 +4,6 @@
 
 var express = require('express')
   , mongoose = require('mongoose')
-  , UserModel = require('./models/user')
-  , User = mongoose.model('User')
   , MongoStore = require('connect-mongo')(express)
   , siteRoute = require('./routes/site')
   , user = require('./routes/user')

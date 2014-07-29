@@ -10,4 +10,4 @@ var UserSchema = new Schema({
 	  //resetPasswordToken : { type: String, required: false },
 	  //resetPasswordTokenCreatedAt : { type: Date }
 	});
-module.exports = mongoose.model('User', UserSchema);
+mongoose.model('User', UserSchema);

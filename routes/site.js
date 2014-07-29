@@ -1,13 +1,19 @@
 var mongoose = require('mongoose')
-  , User = mongoose.model('User')
-
+  , UserModel = require('../models/user')
+  , User = mongoose.model('User');
 exports.login = function(req, res){
 	var username = req.body.username;
 	var password = req.body.password;
 	//var query = User.where({ "username": username, "password":password});
 	User.findOne({ "username": username, "password":password},function (err, obj) {
 	  if (!err) {
-	  	  res.json(200, { message: 'OK',data:obj });
+	  	  if (obj) {
+	  	  	req.session.user = obj;
+	  	  	res.json(200, { message: 'OK',data:obj });
+	  	  } else {
+	  	  	res.json(200, { message: 'ERROR',data:{'message':'login fail'} });
+	  	  }
+	  	  
 	  } else {
 	  	  res.json(200, { message: 'ERROR',data:err });
 	  }
